@@ -1,0 +1,534 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    first netscape navigator was released in 1994 .brendan eich created javascript in 1995 within 10 days.it was first called mocha then livescript and finally javascript.
+
+    in 1996 microsoft released jscript with internet explorer 3.0. in 1997 ecma international published the first edition of ecmascript. 
+
+    es1:1997 netscape submitted javascript to ecma international for standardization. the result was ecmascript 1 in june 1997. it was based on javascript and jscript. the latest version of ecmascript is ecmascript 11 released in 2020.
+
+    es6: ecmascript 6 was released in 2015. it is also known as es6 or es2015. it is a major update to the language. it added many new features to the language. it is the first major update to the language since es5 which was released in 2009.
+
+    members of tc39 committee are responsible for the development of ecmascript. tc39 stands for technical committee 39. it is a group of people who are responsible for the development of ecmascript.
+
+    es6:es2015 is a major update to the language. it added many new features to the language. it is the first major update to the language since es5 which was released in 2009.
+
+    es7:es2016 was released in 2016. it is a minor update to the language. it added two new features to the language. it is the second minor update to the language since es6 which was released in 2015.
+
+    es8:es2017 was released in 2017. it is a minor update to the language. it added many new features to the language. it is the third minor update to the language since es6 which was released in 2015.
+
+
+    javascript is backward compatible. this means that newer versions of the language can run on older versions of the language. this is because the newer versions of the language are based on the older versions of the language.
+
+    babel is a tool that can be used to convert es6 code to es5 code. this is useful because not all browsers support es6 code. babel can be used to convert es6 code to es5 code so that it can run on all browsers.
+
+
+     
+
+//       
+"use strict";  //it is used to make the code more secure and more reliable
+Short truth (but explained properly)
+
+👉 No, not using ; will NOT give an error,
+👉 even if you use "use strict".
+// ye hamesha niche hi link krna 
+// if you want to write script in the head then always use differ method
+//          console.log('hello world');
+
+    //variables
+    //variables can stire some info , we can use that info later, we can change that info later
+    
+    //declaration of variable
+     var x="hello world"; //we can use single or double quotes
+
+     //use of variable
+        console.log(x);
+
+
+        //change the value of variable
+        x="hello world 2";
+        console.log(x);
+
+//   javascript is case sensitive
+
+                      //rules for naming variables
+
+      // you cannot start with number
+// example:-
+// 1value (invalid)
+// value1 (valid)
+
+// you can use only underscore or dollar symbol
+// first_name (valid)
+// _firstname (valid)
+
+// first$name (valid)
+// $firstname (valid)
+
+// you cannot use spaces
+
+// first name (invalid)
+
+// convention
+//first_name- snake_case
+
+//firstName- camelCase
+// start with small letter and use camelCase
+
+//var keyword
+//var is used to declare a variable
+//var is function scoped
+//var can be updated and redeclared
+
+var x="hello world";
+console.log(x);
+
+x="hello world 2";
+console.log(x);
+
+var x="hello world 3";
+console.log(x);
+
+
+// let keyword
+// let is used to declare a variable
+// let is block scoped
+// let can be updated but not redeclared
+
+let y="hello world";
+console.log(y);
+
+y="hello world 2";
+console.log(y);
+
+// const keyword
+// const is used to declare a constant
+// const is block scoped
+// const cannot be updated or redeclared
+
+const z="hello world";
+
+console.log(z);
+
+
+
+
+//////////
+
+//string indexing
+let str="hello world";
+//h e l l o   w o r l d
+//0 1 2 3 4 5 6 7 8 9 10
+
+//str="hello world      " then length=13
+
+
+//length of string
+console.log(str.length);
+if we include spaces then it will be included in the length of string 
+//last index: length-1. length start from 1 but index start from 0 so last index will be length-1
+
+
+///////////
+
+///string methods
+//trim()
+//trim() method removes whitespace from both ends of a string
+let str1="   hello world   ";
+console.log(str1.trim());
+
+//sring is immutable
+
+
+//toUpperCase()
+//toUpperCase() method converts a string to uppercase letters
+let str2="hello world";
+console.log(str2.toUpperCase());
+
+//toLowerCase()
+//toLowerCase() method converts a string to lowercase letters
+let str3="HELLO WORLD";
+console.log(str3.toLowerCase());
+
+//charAt()
+//charAt() method returns the character at a specified index in a string
+let str4="hello world";
+console.log(str4.charAt(0));
+
+//indexOf()
+//indexOf() method returns the index of the first occurrence of a specified value in a string
+let str5="hello world";
+console.log(str5.indexOf("world"));
+
+
+//slice()
+//slice() method extracts a part of a string and returns a new string
+let str6="hello world";
+console.log(str6.slice(0,5));     console.log(str6.slice()); //hello world
+//where 0 is the starting index and 5 is the ending index
+// where 0,5 are the starting and ending index
+ //ans n-1 index tk hi chalega
+
+ slice(-5) //last 5 characters
+    slice(5) //5th index to last index
+
+//split()
+//split() method splits a string into an array of substrings
+let str7="hello world";
+console.log(str7.split(" "));
+//where " " is the separator
+
+//replace()
+//replace() method replaces a specified value with another value in a string
+let str8="hello world";
+console.log(str8.replace("world","javascript"));
+//where "world" is the value to be replaced and "javascript" is the new value
+
+//includes()
+//includes() method checks if a string contains a specified value
+let str9="hello world";
+
+console.log(str9.includes("world"));
+//where "world" is the value to be checked
+
+//repeat()
+//repeat() method returns a new string with a specified number of copies of an existing string
+let str10="hello world";
+console.log(str10.repeat(2));
+//where 2 is the number of copies
+
+//concat()
+//concat() method joins two or more strings
+let str11="hello";
+let str12="world";
+// str11 + str12;
+console.log(str11.concat(" ",str12));
+
+//typeif operator
+//typeof operator returns the data type of a variable
+
+//data types(primitive data types)
+//string
+//number
+//boolean
+//undefined
+//null
+//symbol
+//Bigint
+
+let str13="hello world";
+console.log(typeof str13);
+
+
+//convert number to string
+let num=10;
+console.log(typeof num);
+console.log(typeof num.toString());
+
+num+=""; //convert number to string
+console.log(typeof num); //string
+
+//convert string to number
+let str14=+"10";
+console.log(typeof str14);
+console.log(typeof parseInt(str14));
+
+
+
+//string concatenation
+let str15="17";
+let str16="13";
+console.log(str15+str16); //1713
+let newstr=+str15+ + +str16;
+console.log(newstr); //30
+
+
+
+
+
+//////////////
+
+//template string
+//template string is a string that can contain placeholders
+//template string is enclosed in backticks
+
+let age=22;
+let name="john";
+let str18="my name is "+name+" and i am "+age+" years old";
+let str17=`my name is ${name} and i am ${age} years old`;
+console.log(str17);
+
+and when we use template string we can use multi line string and it will print in the same format as we write it in the code and when we use " " or ' ' then we have to use \n to print in the next line
+
+let firstName = "Rakesh"; is String primitive, this is Immutable, these are Stored in the Memory directly.
+where as 
+let firstName = new String("Rakesh"); is String Object, this is Mutable, this not Efficient for Memory Management when compare to String Primitives.  
+/////////////  
+
+//undifined
+//undefined is a variable that has been declared but not assigned a value
+//undefined is a type of undefined
+//undefined is a falsy value
+//let firstname; this is undefined and you can also decalue like this with let but u have to give varible in const otherwise it will gibe error
+
+let x1;
+console.log(x1); //undefined
+
+//null
+//null is a variable that has been assigned the value null
+//null is a type of object
+//null is a falsy value
+
+let x2=null;
+console.log(x2); //null
+
+//null vs undefined
+//null is an object
+//undefined is a type
+//null is a value
+//undefined is a variable
+//null is a falsy value
+//undefined is a falsy value
+
+console.log(typeof null); //object   it is history bug in javascript
+
+
+// it is neccary to define a variable before using it but u can use var and let without defining it but it will give undefined
+
+//bigInt
+//bigInt is a new data type in javascript
+//bigInt is used to represent integers that are larger than 2^53-1
+
+let mynumber=BigInt(12345678901234567890);
+let samenumber=123n;
+console.log(mynumber);
+console.log(samenumber);
+console.log(Number.MAX_SAFE_INTEGER)    //2^53-1
+
+
+//you cannot add a number and a bigInt
+
+
+//////////
+
+// booleans and comparisn operators
+// boolean is a data type that can only have two values: true or false
+
+let x3=true;
+let y3=false;
+
+console.log(x3);
+console.log(y3);
+
+
+//-- vs ===
+//== is used to compare two values
+//=== is used to compare two values and their types
+
+let x4=10;
+let y4="10";
+
+console.log(x4==y4); //true
+console.log(x4===y4); //false
+
+//!= vs !==
+//!= is used to compare two values
+//!== is used to compare two values and their types
+
+
+
+
+
+///////
+
+//truthy and falsy values
+//truthy values are values that are considered true when evaluated in a boolean context
+//falsy values are values that are considered false when evaluated in a boolean context
+
+//falsy values
+//false
+//0
+//null
+//undefined
+//NaN
+//""
+
+//truthy values
+//true
+//any number other than 0
+//any string other than ""
+//any object
+//any array
+
+let x5=10;
+let y5="hello";
+
+if(x5){
+    console.log("x5 is truthy");
+}
+else{
+    console.log("x5 is falsy");
+}
+
+if(y5){
+    console.log("y5 is truthy");
+}
+else{
+
+    console.log("y5 is falsy");
+}
+
+////////
+//ternary operator   /cpnditional operator
+//ternary operator is a shorthand for if else statement
+//ternary operator is used to assign a value to a variable based on a condition
+
+let x6=10;
+let y6=20;
+
+let result=x6>y6?"x6 is greater than y6":"x6 is less than y6";
+console.log(result);
+
+//and or operator 
+//and operator is used to combine two or more conditions
+//and operator is represented by &&
+
+let x7=10;
+let y7=20;
+let z7=30;
+
+if(x7<y7 && y7<z7){
+    console.log("true");
+}
+else{
+    console.log("false");
+}
+
+//or operator is used to combine two or more conditions
+
+let x8=10;
+let y8=20;
+let z8=30;
+
+
+if(x8>y8 || y8<z8){
+    console.log("true");
+}
+else{
+    console.log("false");
+}
+
+
+///////////
+//nested if else
+//nested if else is an if else statement inside another if else statement   
+
+let x9=10;
+let y9=20;
+let z9=30;  
+
+let winningNumber=20;
+let userGuess=+prompt("enter your guess"); //+ is used to convert string to number
+
+
+
+if(x9>y9){
+    console.log("x9 is greater than y9");
+}
+else if(y9>z9){
+    console.log("y9 is greater than z9");
+}
+else{
+    console.log("z9 is greater than x9 and y9");        
+}
+
+//console.log(~(0)) //-1 beacause it will be converted to 11111111 anf there is 1 at the end so it will be converted to -1 in 2's complement form and it will be converted to -1 in decimal form.
+
+//////////
+//switch case
+//switch case is used to perform different actions based on different conditions
+
+
+let day="monday";
+
+switch(day){
+    case "monday":
+        console.log("today is monday");
+        break;
+    case "tuesday":
+        console.log("today is tuesday");
+        break;
+    case "wednesday":
+        console.log("today is wednesday");
+        break;
+    case "thursday":
+        console.log("today is thursday");
+        break;
+
+
+
+
+        /////////
+        //loops
+        //loops are used to execute a block of code multiple times
+
+        //for loop
+        //for loop is used to execute a block of code a specified number of times
+        //for loop has three parts: initialization, condition, increment/decrement
+
+        for(let i=0;i<5;i++){
+            console.log(i);
+        }
+
+        //while loop
+        //while loop is used to execute a block of code as long as a condition is true
+
+        let i=0;
+        while(i<5){
+            console.log(i);
+            i++;
+        }
+
+        //do while loop
+        //do while loop is used to execute a block of code at least once, and then repeat the loop as long as a condition is true
+
+        let j=0;
+        do{
+            console.log(j);
+            j++;
+        }while(j<5);
+
+        //break statement
+        //break statement is used to exit a loop
+
+        for(let i=0;i<5;i++){
+            if(i==3){
+                break;
+            }
+            console.log(i);
+        }
+
+
+
+        //continue statement
+        //continue statement is used to skip an iteration in a loop
+
+        for(let i=0;i<5;i++){
+            if(i==3){
+                continue;
+            }
+            console.log(i);
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

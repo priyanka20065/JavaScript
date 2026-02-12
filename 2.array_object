@@ -1,0 +1,583 @@
+//array and objects
+ 
+
+// intro to arrays 
+// reference type 
+// how to create arrays
+
+// ordered collection of items 
+
+// let fruits = ["apple", "mango", "grapes"];
+// let numbers = [1,2,3,4];
+// let mixed = [1,2,2.3, "string  ", null, undefined]; //possible but not recommended
+// console.log(mixed);
+// console.log(numbers);
+// console.log(fruits[2]);
+let fruits = ["apple", "mango", "grapes"];
+let obj = {}; // object literal
+// console.log(fruits);
+// fruits[1] = "banana";
+// console.log(fruits);  //arrays are mutable and we can change the value of an array but we cannot change the value of a string because it is immutable
+console.log(typeof fruits); //object
+console.log(typeof obj);
+console.log(Array.isArray(fruits));   //this function is used to check if the given object is an array or not
+console.log(Array.isArray(obj));
+
+
+
+////////////////////////////
+// array push pop  ->add in last position and remove from last position
+
+// array shift unshift 
+
+let fruit = ["apple", "mango", "grapes"];
+console.log(fruit);
+// push 
+// fruits.push("banana");
+// console.log(fruits);
+
+// pop 
+// let poppedFruit = fruits.pop();   //pop function is used to remove the last element of the array and store it in a variable
+// console.log(fruits);
+// console.log("popped fruits is", poppedFruit);
+
+
+// unshift ->add element in the first position
+// fruits.unshift("banana");
+// fruits.unshift("myfruit");
+// console.log(fruits);
+
+// shift ->it removes and store it in a variable
+// let removedFruit = fruits.shift();
+// console.log(fruits);
+// console.log("removed fruits is ", removedFruit);
+
+// push and pop is fast as compared to shift and unshift
+
+
+////////////////////////////
+
+// primitve vs reference data types
+// let num1 = 6;
+// let num2 = num1;
+// console.log("value is num1 is", num1);    //6
+// console.log("value is num2 is", num2);    //6
+// num1++;
+// console.log("after incrementing num1")
+// console.log("value is num1 is", num1);   //7
+// console.log("value is num2 is", num2);    //6
+//because num1 and num2 are primitive data types and they are stored in different memory locations so when we increment num1 it does not affect num2 .
+
+// reference types 
+// array 
+let array1 = ["item1", "item2"];
+let array2 = array1;
+console.log("array1", array1);    //item1, item2
+console.log("array2", array2);    //item1, item2
+array1.push("item3");
+console.log("after pushing element to array 1");
+console.log("array1", array1);   //item1, item2, item3
+console.log("array2", array2)    //item1, item2, item3
+
+// so here we can see that array2 is also getting updated when we are updating array1 
+
+//this is because array is a reference type and it is stored in the memory location and array2 is pointing to the same memory location as array1 but  in case of primitive data types it is stored in the memory location it is stored in stack and when we assign it to another variable then it is stored in another memory location and it is not pointing to the same memory location as the original variable
+
+
+//////////////////////////////
+// how to clone array 
+
+// how to concatenate two arrays
+
+// let array1 = ["item1", "item2"];
+// let array2 = array1; //this will not clone the array it will just point to the same memory location
+// console.log(array1===array2); //true
+
+// let arr = ["item1", "item2"];
+//let arr2=["item1", "item2"];
+// console.log(arr===arr2); //false because they are stored in different memory locations . this is clloing but it is not recommended as it is not fast and it is not efficient.
+
+1)   let array=array1.slice(0); //this will clone the array and it is fast and efficient as compared to other methods but it is not recommended as it is not readable and it is not easy to understand for beginners and u can also write like let array=array1.slice();
+
+2)   let array2 = [].concat(array1); //this will also clone the array and it is also fast and efficient as compared to other methods 
+
+
+// let array2 = array1.slice(0).concat(["item3","item4"]);
+// let array2 = [].concat(array1,["item3", "item4"]);
+// new way 
+// spread operator
+// let oneMoreArray = ["item3", "item4"]
+// let array2 = [...array1, ...oneMoreArray,"item5"];
+
+// array1.push("item3");
+ 
+
+
+////////////////////////////
+
+// for loop in array 
+
+// let fruits = ["apple", "mango", "grapes", "banana"];
+
+// for(let i=0; i<=9;i++){
+//     console.log(fruits[i]);               
+// }
+
+// console.log(fruits.length); //4
+// console.log(fruits[fruits.length-2]);
+// let fruits2 = [];
+// for(let i=0; i < fruits.length; i++){
+//     fruits2.push(fruits[i].toUpperCase());
+// }
+
+
+// console.log(fruits2); //["APPLE", "MANGO", "GRAPES", "BANANA"]
+
+////////////////////////////
+
+// use const for creating array
+
+// heap memory ["apple", "mango"] 0x11
+
+// const fruits = ["apple", "mango"]; // 0x11
+// fruits.push("banana");
+// console.log(fruits);
+
+
+
+
+////////////////////////////
+
+// while loop in array 
+// const fruits = ["apple", "mango", "grapes"];
+// const fruits2 = [];
+// let i = 0;
+// while(i<fruits.length){
+//     fruits2.push(fruits[i].toUpperCase());
+//     i++;
+// } 
+// console.log(fruits2);
+
+//we can add delete update in const array but we cannot reassign the array to another array or value
+
+////////////////////////////
+
+// for of loop in array   
+//it is used to iterate over the array or string
+// const fruits = ["apple", "mango", "grapes", "fruit4", "fruit5"];
+// const fruits2 = [];
+
+// for(let fruit of fruits){
+//     fruits2.push(fruit.toUpperCase());
+// }
+// console.log(fruits2);
+
+
+
+////////////////////////////
+
+// for in loop in array
+// const fruits = ["apple", "mango", "grapes", "fruit4", "fruit5"];
+// const fruits2 = [];
+
+// for(let index in fruits){
+//     fruits2.push(fruits[index].toUpperCase());
+// }
+// console.log(fruits2);
+
+
+// difference between for of and for in loop
+// for of loop is used to iterate over the values of an array
+// for in loop is used to iterate over the index of an array
+
+
+
+
+
+////////////////////////////
+
+// array destructuring ->it is used to extract the values from the array and store it in a variable
+// const myArray = ["value1", "value2", "value3","value4"];
+// let myvar1 = myArray[0];
+// let myvar2 = myArray[1];
+// console.log("value of myvar1", myvar1);
+// console.log("value of myvar2", myvar2);
+
+// let [myvar1, myvar2, ...myNewArray] = myArray;   // this is called array destructuring and it is used to extract the values from the array and store it in a variable and the remaining values will be stored in an array called myNewArray
+// console.log("value of myvar1", myvar1);
+// console.log("value of myvar2", myvar2);
+// console.log(myNewArray);
+
+// if array has more values than the variables then the remaining values will be stored in an array and if the array has less values than the variables then the remaining variables will be undefined and if we want to give vlue3 to myvar2 then we can put comma ,, in place of value2 and then value3 will be stored in myvr
+
+
+////////////////////////////
+
+// objects reference type  
+// arrays are good but not sufficient 
+// for real world data 
+// objects store key value pairs 
+// objects don't have index
+
+// how to create objects 
+
+// const person = {name:"Harshit",age:22};
+const person = {
+    name: "harshit",
+    age: 22,
+    hobbies: ["guitar", "sleeping", "listening music"]
+}
+console.log(person);
+
+// how to access data from objects 
+// console.log(person["name"]);
+// console.log(person["age"]);
+// console.log(person.hobbies);
+
+// how to add key value pair to objects
+person["person"] = "male";
+console.log(person);
+
+
+
+
+////////////////////////////
+
+// difference between dot and bracket notaion
+// const key = "email";
+// const person = {
+//     name: "harshit",
+//     age: 22,
+//     "person hobbies": ["guitar", "sleeping", "listening music"]
+
+// }
+
+//console.log(person.person hobbies);  //this will give error
+// console.log(person["person hobbies"]);
+// person[key] = "harshitvashisth@gmail.com";
+// console.log(person);
+ 
+
+
+////////////////////////////
+
+// how to iterate object 
+const person = {
+    name: "harshit",
+    age: 22,
+    "person hobbies": ["guitar", "sleeping", "listening music"]
+}
+
+// for in loop 
+// Object.keys 
+
+// for(let key in person){
+//     // console.log(`${key} : ${person[key]}`);
+//     console.log(key," : " ,person[key]);
+// }
+
+//console.log(Object.keys(person));  //[ 'name', 'age', 'person hobbies' ]  it gives the keys of the object in an array format
+// console.log(typeof (Object.keys(person)));   //gives in arraay format
+// const val = Array.isArray((Object.keys(person)));
+// console.log(val); //true 
+
+// for(let key of Object.keys(person)){
+//     console.log(person[key]);
+// }
+//output
+// harshit
+// 22
+// [ 'guitar', 'sleeping', 'listening music' ]
+
+
+
+
+////////////////////////////
+    
+// computed properties
+
+// const key1 = "objkey1";
+// const key2 = "objkey2";
+
+// const value1 = "myvalue1";
+// const value2 = "myvalue2";
+
+// const obj = {
+//     objkey1 : "myvalue1",
+//     objkey2 : "myvalue2",
+// }
+
+// const obj = {
+//     [key1] : value1,
+//     [key2] : value2   //if we dont use [] then it will take key1 as key1 and not as objkey1 and same for key2 when we use [] then it will take the value of key1 and key2 as objkey1 and objkey2
+// }
+// console.log(obj);
+//   //we can use computed properties in objects
+// const obj = {};
+
+// obj[key1] = value1;
+// obj[key2] = value2;
+// console.log(obj);
+
+
+
+////////////////////////////
+
+// spread operator
+// const array1 = [1, 2, 3];
+// const array2 = [5, 6, 7];
+
+// // const newArray = [...array1, ...array2, 89, 69];
+//const newArray=[..."abc"]  ans is ["a", "b", "c"]
+// const newArray = [..."123456789"];  ans is [1, 2, 3, 4, 5, 6, 7, 8, 9]  and also we have to use " "
+// console.log(newArray);
+
+// spread operator in objects
+// const obj1 = {
+//     key1: "value1",
+//     key2: "value2",   //key koi repeat nhi krta h agar krta h toh last wala hi chalega
+//   };
+//   const obj2 = {
+//     key1: "valueUnique",
+//     key3: "value3",
+//     key4: "value4",
+//   };
+     //and when we use spread operater to make obj and in object two keys are same then the last one will be taken and the first one will be ignored and if two object have same key then the last one will be taken and the first one will be ignored this will be decided by the order in which we write the objects
+  // const newObject = { ...obj2, ...obj1, key69: "value69" };
+  // const newObject = { ...["item1", "item2"] };  we have to use {} to make object and [] to make array so we cannot use spread operator on array to make object
+  // const newObject = { ..."abcdefghijklmnopqrstuvwxyz" };
+  // console.log(newObject); ye ik ik krke aya hoga 
+  //[0: "a", 1: "b", 2: "c", 3: "d", 4: "e", 5: "f", 6: "g", 7: "h", 8: "i", 9: "j", 10: "k", 11: "l", 12: "m", 13: "n", 14: "o", 15: "p", 16: "q", 17: "r", 18: "s", 19: "t", 20: "u", 21: "v", 22: "w", 23: "x", 24: "y", 25: "z"]
+
+
+
+
+
+  ////////////////////////////
+
+  // object destructuring
+// const band = {
+//     bandName: "led zepplin",
+//     famousSong: "stairway to heaven",
+//     year: 1968,
+//     anotherFamousSong: "kashmir",
+//   };
+  
+    // const bandName = band.bandName;
+    // const famousSong = band.famousSong;
+    // const year = band.year;
+    // const anotherFamousSong = band.anotherFamousSong;
+    //but we can do this in one line using object destructuring
+//   let { bandName:var1, famousSong, ...restProps } = band;    //now we can use var1 to access bandName and famousSong to access famousSong and restProps will contain the remaining properties of the object
+//   console.log(bandName);  //give error because bandName is not defined and we have used var1 to store the value of bandName
+//   console.log(restProps);
+   //var1 is used to store the value of bandName and famousSong is used to store the value of famousSong and restProps is used to store the remaining values of the object and restProps is an object
+
+
+
+    ////////////////////////////
+
+// objects inside array 
+// very useful in real world applications
+
+// const users = [
+//     {userId: 1,firstName: 'harshit', gender: 'male'},
+//     {userId: 2,firstName: 'mohit', gender: 'male'},
+//     {userId: 3,firstName: 'nitish', gender: 'male'},
+// ]
+// for(let user of users){
+//     console.log(user.firstName);
+// }
+
+
+
+////////////////////////////
+
+// nested destructuring  // it is used to extract the values from the nested objects and store it in a variable
+// const users = [
+//     {userId: 1,firstName: 'harshit', gender: 'male'},
+//     {userId: 2,firstName: 'mohit', gender: 'male'},
+//     {userId: 3,firstName: 'nitish', gender: 'male'},
+// ]
+
+
+//const [{firstName}, , {gender}]= users;  // we can skip the values by using comma ,, and in this we will get firstName of first object and gender of third object
+// const [{firstName: user1firstName, userId}, , {gender: user3gender}] = users;
+// console.log(user1firstName);
+// console.log(userId);
+// console.log(user3gender);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let obj = {
+//     name: "Love",
+//     age: 25,
+//     weight: 85,
+//     height: "6ft 1in",
+//     greet: function(){
+//         console.log("hello jee kaise ho saare");
+//     }
+// };
+
+// for(let key in obj) {
+//     console.log(key, " ", obj[key]);
+// }
+
+// console.log(obj)
+// obj.greet();
+
+// console.log(typeof(obj))
+
+// // let obj2 = obj;  shallow copy
+// let obj2 = {...obj}; //deep copy  
+
+// //creation of arrays 
+// let arr = [1,2,3,4,5];
+// //array constructor 
+// let brr = new Array('love',100,true);
+// brr.push('Babbar');
+// brr.pop();
+
+// brr.shift();
+// brr.unshift('Love Babbar');
+// brr.push(20);
+// brr.push(40);
+
+
+// brr.push(70);
+
+// // console.log(brr.slice(2,4) );
+
+// brr.splice(1,0,'kunal');
+
+// console.log(brr);
+
+// // console.log(brr);
+
+// // console.log(typeof(brr));
+
+
+// let arr = [10,20,30,11,21,44,51];
+
+// let evenArray = arr.filter((number) => {
+//     return number%2 === 0;
+//     // if(number%2 === 0) {
+//     //     return true;
+//     // }
+//     // else {
+//     //     return false;
+//     // }
+// });
+
+
+// console.log(evenArray)
+
+// arr.map((number,index) => {
+//     console.log(number);
+//     console.log(index);
+// })
+
+// let ansArray  = arr.map((number) => {
+//     return number*number;
+// })
+
+// console.log(ansArray)
+
+
+
+// let arr = [1,2,'love','kunal', null];
+
+// let ans = arr.filter((value) => {
+//     if(typeof(value) == 'number') {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// });
+
+// console.log(ans);
+
+
+
+// let arr = [10,20,30,40];
+
+// let ans  = arr.reduce((acc,curr)=> {
+//     return acc + curr;
+// }, 0);
+
+// console.log(ans);
+
+// let arr = [9,1,7,4,2,8];
+// arr.sort();
+// //HW: how to do sort in descending order ?
+
+// console.log(arr);
+
+// console.log(arr.indexOf(9));
+
+
+// let arr = [10,20,30];
+
+// let length = arr.length;
+// console.log("length: " , length);
+// //tradiotional loop
+
+// for(let index = 0; index < length; index++) {
+//     console.log(arr[index]);
+// }
+
+// arr.forEach((value, index) => {
+//     console.log("Number: ", value, " Index: ", index);
+// })
+
+// let arr = [10,20,30,40];
+
+// for(let value of arr) {
+//     console.log(value);
+// }
+
+// let fullName = "babbar";
+
+// for(let val of fullName) {
+//     console.log(val);
+// }
+
+// let arr = [10,20,30,40,50];
+
+// let getSum = (arr) => {
+//     let sum = 0;
+//     arr.forEach((value) => {
+//         sum = sum + value;
+//     })
+//     return sum;
+// }
+
+// let totalSum = getSum(arr);
+// console.log(totalSum);
